@@ -4,13 +4,94 @@ import { SignUpButton } from "@/components/Navbar"
 import Noise from "@/components/Noise"
 import SplitText from "@/components/SplitText"
 import AOSInit from "@/config/AOS"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import portfoliophoto from '../assets/portfolios/cyp.png'
 import logo from '../assets/logo.svg'
 
 const LandingPage = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
+  const ref = useRef<HTMLElement | null>(null)
+  const [flat, setFlat] = useState(false)
+  const [buildInStep, setBuildInStep] = useState(1)
+  const scrollLock = useRef(false)
+  const stickyTriggerRef = useRef<HTMLDivElement | null>(null);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const scrollAccumulator = useRef(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+        // Reset accumulator when entering/leaving to prevent jumpy starts
+        scrollAccumulator.current = 0;
+      },
+      { 
+        threshold: 1.0, // Only trigger when the WHOLE sticky box is in view
+        rootMargin: "-130px 0px 0px 0px" 
+      }
+    );
+  
+    if (stickyTriggerRef.current) {
+      observer.observe(stickyTriggerRef.current);
+    }
+  
+    return () => observer.disconnect();
+  }, []);
+  
+  useEffect(() => {
+    const handleStepScroll = (e: WheelEvent) => {
+      if (!isIntersecting || scrollLock.current) return;
+  
+      const delta = e.deltaY;
+  
+      // 1. Check if we should release the scroll to the rest of the page
+      if (buildInStep === 3 && delta > 0) return; // Let user scroll down past section
+      if (buildInStep === 1 && delta < 0) return; // Let user scroll up away from section
+  
+      // 2. Lock the page scroll while we are in-between steps
+      if (e.cancelable) e.preventDefault();
+  
+      // 3. Accumulate scroll to handle trackpad sensitivity
+      scrollAccumulator.current += delta;
+  
+      // Trigger step change only after a certain amount of "effort"
+      if (Math.abs(scrollAccumulator.current) > 100) {
+        scrollLock.current = true;
+        
+        setBuildInStep((prev) => {
+          const direction = scrollAccumulator.current > 0 ? 1 : -1;
+          const nextStep = Math.max(1, Math.min(3, prev + direction));
+          return nextStep;
+        });
+  
+        // Reset accumulator and unlock after animation
+        scrollAccumulator.current = 0;
+        setTimeout(() => {
+          scrollLock.current = false;
+        }, 700); // Match this to your transition duration
+      }
+    };
+  
+    // Vital: Add listener to window, but only block when intersecting
+    window.addEventListener("wheel", handleStepScroll, { passive: false });
+    
+    return () => window.removeEventListener("wheel", handleStepScroll);
+  }, [isIntersecting, buildInStep]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ref.current) return
+  
+      const top = ref.current.getBoundingClientRect().top
+      setFlat(top <= 200) // animate earlier
+    }
+  
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // run once
+  
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
   
   return (
     <>
@@ -87,7 +168,7 @@ const LandingPage = () => {
           </div>
         </section>
 
-        <div className="relative z-[40]">
+        <div className="relative z-[40] pb-[190px]">
           {/* A short video */}
           <section
             className="mb-[260px] container mx-auto w-full relative aspect-video overflow-hidden rounded-[24px]"
@@ -96,7 +177,7 @@ const LandingPage = () => {
           </section>
 
           {/* Templates */}
-          <section className="container mx-auto w-full relative mb-[60px] flex items-center justify-baseline gap-[30px]">
+          <section className="container mx-auto w-full relative flex items-center justify-baseline gap-[30px]">
             <div className="w-fit shrink-0">
               <h3 className="font-google-sans-flex tracking-tight leading-[115%] text-primary/85 mb-[12px] font-bold text-[4rem]">Grab the template you <br /> like and tweak it.</h3>
               <p className="text-primary/70 font-poppins font-medium text-wh/60 leading-[150%]">CYP helps you launch projects instantly without the usual hassle. <br /> Save time, skip the setup, and get your ideas live in minutes, <br /> no coding, no design skills needed</p>
@@ -133,13 +214,111 @@ const LandingPage = () => {
               </CardSwap>
             </div>
           </section>
-
-          {/* Build in 3 steps */}
-
-          <section className="w-full bg-black rounded-t-[100px] py-[40px] h-[50rem] relative z-[55]">
-
-          </section>
         </div>
+
+        <section 
+          ref={ref}
+          className={`w-full min-h-[220vh] bg-black relative z-[55] pt-[40px] transition-[border-radius] duration-500 ease-out
+          ${flat ? "rounded-t-none" : "rounded-t-[200px]"}`}
+        >
+          <div className="sticky mx-auto w-[898px] h-[65px] top-[23px] bg-white rounded-[40px] mb-[360px]"></div>
+        
+          {/* Build in 3 steps */}
+          <div
+            className="max-w-[1150px] text-white mx-auto px-[16px] sticky top-[130px]"
+          >
+            <div 
+            ref={stickyTriggerRef}
+            data-aos="fade-up" className="flex items-stretch gap-[16px]">
+              {/* left side */}
+              <div className="shrink-0 w-[400px] flex flex-col">
+                <h2 className="text-white/80 font-google-sans-flex font-semibold text-[2.5rem] mb-[24px]">How it works.</h2>
+                
+                <div className="grow flex flex-col gap-[16px]">
+                  <button
+                    onClick={() => setBuildInStep(1)}
+                    className={`${buildInStep === 1 ? 'grow' : ''} w-full transition-all duration-300 bg-white p-[16px] rounded-[16px] flex items-start`}
+                  >
+                    <div className="flex items-center gap-[12px]">
+                      <svg className="w-[40px]" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" id="Icons" fill="#000" version="1.1" viewBox="0 0 32 32"><g id="SVGRepo_iconCarrier"><style>.st1,.st2,.st3.st2,.st3.st3</style><path d="M29 22v4h-4"/><path d="M19 26h-9"/><path d="M7 26H3v-4"/><path d="M3 18v-6"/><path d="M3 10V6h4"/><path d="M13 6h9"/><path d="M25 6h4v4"/><path d="M29 14v6"/></g></svg>
+                      <p className="text-primary font-outfit leading-[110%] font-semibold text-[2rem]">Pick a template</p>
+                    </div>
+                  </button>
+
+                  <button
+                    onClick={() => setBuildInStep(2)}
+                    className={`${buildInStep === 2 ? 'grow' : ''} w-full transition-all duration-300 bg-white p-[16px] rounded-[16px] flex items-start`}
+                  >
+                    <div className="flex items-center gap-[16px]">
+                      <svg className="w-[35px]" xmlns="http://www.w3.org/2000/svg" fill="#fff" stroke="#fff" aria-hidden="true" viewBox="0 0 64 64"><path fill="#000" d="M61.501 55.155 26.109 19.77l1.613-1.614a2.245 2.245 0 0 0 .597-2.096C37.728 8.44 47.494 4.102 54.763 4.074 47.283-.331 34.92 2.448 23.59 10.84l-.647-.647a2.257 2.257 0 0 0-3.188 0l-1.613 1.612-3.489-3.487c-.35-.348-.791-.499-1.279-.499-2.761 0-7.043 4.855-5.064 6.815l3.501 3.5-1.618 1.618a2.262 2.262 0 0 0 0 3.186l.649.648C2.448 34.911-.332 47.271 4.074 54.747c.031-7.266 4.369-17.03 11.989-26.435a2.252 2.252 0 0 0 2.095-.596l1.619-1.617 35.404 35.396c.348.352.788.505 1.276.505 2.743 0 7.005-4.869 5.044-6.845"/></svg>
+                      <p className="text-primary font-outfit leading-[110%] font-semibold text-[2rem]">Pick a template</p>
+                    </div>
+                  </button>
+
+                  <button
+                    onClick={() => setBuildInStep(3)}
+                    className={`${buildInStep === 3 ? 'grow' : ''} w-full transition-all duration-300 bg-white p-[16px] rounded-[16px] flex items-start`}
+                  >
+                    <div className="flex items-center gap-[12px]">
+                      <svg className="w-[37px]" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" viewBox="0 0 24 24"><path d="M21 8V7h-2V2H5v5H3v1H2v10h1v1h3v3h12v-3h3v-1h1V8h-1zm-1 8h-1v1h-1v-5H6v5H5v-1H4v-6h1V9h14v1h1v6zm-4 4H8v-6h8v6zM7 4h10v3H7V4z"/></svg>
+                      <p className="text-primary font-outfit leading-[110%] font-semibold text-[2rem]">Pick a template</p>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              {/* Right side */}
+              <div className="grow py-[160px]">
+                <div className="w-full">
+                  {
+                    buildInStep === 1 &&
+                    <div className="w-full aspect-video">
+                      <h3 className="text-white/80 mb-[16px] text-[1.85rem] font-google-sans-flex font-medium">First Step</h3>
+                      <video
+                        src="https://playntestimages.s3.eu-central-1.amazonaws.com/Videos/Adil+Videos+23.11/Domain+Demo.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover rounded-[16px]"
+                      ></video>
+                    </div>
+                  }
+
+                  {
+                    buildInStep === 2 &&
+                    <div className="w-full aspect-video">
+                      <h3 className="text-white/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Second Step</h3>
+                      <video
+                        src="https://playntestimages.s3.eu-central-1.amazonaws.com/Videos/Adil+Videos+23.11/Time+Demo.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover rounded-[16px]"
+                      ></video>
+                    </div>
+                  }
+
+                  {
+                    buildInStep === 3 &&
+                    <div className="w-full aspect-video">
+                      <h3 className="text-white/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Third Step</h3>
+                      <video
+                        src="https://playntestimages.s3.eu-central-1.amazonaws.com/Videos/Adil+Videos+23.11/Accuracy+Demo.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover rounded-[16px]"
+                      ></video>
+                    </div>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       </div>
     </>

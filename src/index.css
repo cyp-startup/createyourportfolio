@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 @import "tailwindcss";
 
@@ -14,9 +15,8 @@
   --color-primary: #09090b;
   --font-montserrat: "Montserrat", sans-serif; 
   --font-google-sans-flex: "Google Sans Flex", sans-serif; 
-  --font-poppins: "Poppins", sans-serif; 
-  --font-gramatika-black: "Gramatika Black", sans-serif; 
-  --font-involve: "Involve", sans-serif; 
+  --font-poppins: "Poppins", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
 }
 
 :root {
@@ -147,79 +147,16 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* Gramatika black font */
-@font-face {
-  font-family: 'Gramatika Black';
-  src: url('/fonts/gramatika-black/GramatikaTrial-Medium-BF65dea4c5c6afd.otf') format('otf');
-  font-size: medium;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gramatika Black';
-  src: url('/fonts/gramatika-black/GramatikaTrial-Regular-BF65dea4c5a77e9.otf') format('otf');
-  font-size: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gramatika Black';
-  src: url('/fonts/gramatika-black/GramatikaTrial-Bold-BF65dea4c5530e5.otf') format('otf');
-  font-size: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gramatika Black';
-  src: url('/fonts/gramatika-black/GramatikaTrial-Black-BF65dea4c4a007c.otf') format('otf');
-  font-size: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-
-/* involve font */
-@font-face {
-  font-family: 'Involve';
-  src: url('/fonts/involve/Involve-Regular-BF65bb0f66a3dc1.otf') format('otf');
-  font-size: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url('/fonts/involve/Involve-Medium-BF65bb0f6716366.otf') format('otf');
-  font-size: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url('/fonts/involve/Involve-SemiBold-BF65bb0f6747dfe.otf') format('otf');
-  font-size: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Involve';
-  src: url('/fonts/involve/Involve-Bold-BF65bb0f66f270b.otf') format('otf');
-  font-size: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  button {
+    @apply cursor-pointer
   }
 }
 
