@@ -3,7 +3,7 @@ import logo from '../assets/logo.svg'
 
 const Footer = () => {
   return (
-    <footer className="w-full py-[20px] border-t border-white/20 bg-primary">
+    <footer className="w-full py-[20px] border-t border-white/20 bg-primary px-[20px]">
       <div className="max-w-[1120px] mx-auto flex items-center justify-between">
         <Link
           to={'/'}
