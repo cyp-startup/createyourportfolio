@@ -231,7 +231,7 @@ const LandingPage = () => {
             ref={stickyTriggerRef}
             data-aos="fade-up" className="flex items-stretch gap-[16px]">
               {/* left side */}
-              <div className="shrink-0 w-[400px] flex flex-col">
+              <div className="shrink-0 w-[420px] flex flex-col">
                 <h2 className="text-white/80 font-google-sans-flex font-semibold text-[2.5rem] mb-[24px]">How it works.</h2>
                 
                 <div className="grow flex flex-col gap-[16px]">
@@ -247,11 +247,11 @@ const LandingPage = () => {
 
                   <button
                     onClick={() => setBuildInStep(2)}
-                    className={`${buildInStep === 2 ? 'grow' : ''} w-full transition-all duration-300 bg-white p-[16px] rounded-[16px] flex items-start`}
+                    className={`${buildInStep === 2 ? 'grow' : ''} w-full transition-all duration-300 bg-white px-[10px] py-[16px] rounded-[16px] flex items-start`}
                   >
                     <div className="flex items-center gap-[16px]">
                       <svg className="w-[35px]" xmlns="http://www.w3.org/2000/svg" fill="#fff" stroke="#fff" aria-hidden="true" viewBox="0 0 64 64"><path fill="#000" d="M61.501 55.155 26.109 19.77l1.613-1.614a2.245 2.245 0 0 0 .597-2.096C37.728 8.44 47.494 4.102 54.763 4.074 47.283-.331 34.92 2.448 23.59 10.84l-.647-.647a2.257 2.257 0 0 0-3.188 0l-1.613 1.612-3.489-3.487c-.35-.348-.791-.499-1.279-.499-2.761 0-7.043 4.855-5.064 6.815l3.501 3.5-1.618 1.618a2.262 2.262 0 0 0 0 3.186l.649.648C2.448 34.911-.332 47.271 4.074 54.747c.031-7.266 4.369-17.03 11.989-26.435a2.252 2.252 0 0 0 2.095-.596l1.619-1.617 35.404 35.396c.348.352.788.505 1.276.505 2.743 0 7.005-4.869 5.044-6.845"/></svg>
-                      <p className="text-primary font-outfit leading-[110%] font-semibold text-[2rem]">Pick a template</p>
+                      <p className="text-primary font-outfit leading-[110%] font-semibold text-[2rem] whitespace-nowrap">Customize Your Content</p>
                     </div>
                   </button>
 
@@ -261,7 +261,7 @@ const LandingPage = () => {
                   >
                     <div className="flex items-center gap-[12px]">
                       <svg className="w-[37px]" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" viewBox="0 0 24 24"><path d="M21 8V7h-2V2H5v5H3v1H2v10h1v1h3v3h12v-3h3v-1h1V8h-1zm-1 8h-1v1h-1v-5H6v5H5v-1H4v-6h1V9h14v1h1v6zm-4 4H8v-6h8v6zM7 4h10v3H7V4z"/></svg>
-                      <p className="text-primary font-outfit leading-[110%] font-semibold text-[2rem]">Pick a template</p>
+                      <p className="text-primary font-outfit leading-[110%] font-semibold text-[2rem]">Publish Instantly</p>
                     </div>
                   </button>
                 </div>
