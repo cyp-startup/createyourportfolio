@@ -133,6 +133,12 @@ const LandingPage = () => {
               </CardSwap>
             </div>
           </section>
+
+          {/* Build in 3 steps */}
+
+          <section className="w-full bg-black rounded-t-[100px] py-[40px] h-[50rem] relative z-[55]">
+
+          </section>
         </div>
 
       </div>
