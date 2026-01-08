@@ -8,7 +8,8 @@ import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import portfoliophoto from '../assets/portfolios/cyp.png'
 import logo from '../assets/logo.svg'
-import Iridescence from "@/components/Iridescence"
+import CountUp from "@/components/CountUp"
+import TemplateCard from "@/components/TemplateCard"
 
 const LandingPage = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -217,13 +218,13 @@ const LandingPage = () => {
           </section>
         </div>
 
+        {/* How it works */}
         <section 
           ref={ref}
           className={`overflow-x-visible w-full lg:min-h-[220vh] bg-white relative z-[55] py-[40px] transition-[border-radius] duration-500 ease-out
           ${flat ? "rounded-t-none" : "rounded-t-[50px] lg:rounded-t-[200px]"}`}
         >
           <div className="sticky mx-auto lg:block hidden w-[898px] h-[65px] top-[23px] bg-black rounded-[40px] mb-[360px]"></div>
-        
           {/* Build in 3 steps */}
           <div
             className="max-w-[1150px] text-black mx-auto px-[16px] sticky top-[130px] lg:block hidden"
@@ -239,7 +240,7 @@ const LandingPage = () => {
                 <div className="grow flex flex-col gap-[16px]">
                   <button
                     onClick={() => setBuildInStep(1)}
-                    className={`${buildInStep === 1 ? 'grow' : ''} w-full transition-all duration-300 bg-black/80 p-[16px] rounded-[16px] flex items-start`}
+                    className={`${buildInStep === 1 ? 'grow' : ''} w-full transition-all duration-300 bg-black p-[16px] rounded-[16px] flex items-start`}
                   >
                     <div className="flex items-center gap-[12px]">
                       <svg className="w-[36px]" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" id="Icons" fill="#fff" version="1.1" viewBox="0 0 32 32"><g id="SVGRepo_iconCarrier"><style>.st1,.st2,.st3.st2,.st3.st3</style><path d="M29 22v4h-4"/><path d="M19 26h-9"/><path d="M7 26H3v-4"/><path d="M3 18v-6"/><path d="M3 10V6h4"/><path d="M13 6h9"/><path d="M25 6h4v4"/><path d="M29 14v6"/></g></svg>
@@ -249,7 +250,7 @@ const LandingPage = () => {
 
                   <button
                     onClick={() => setBuildInStep(2)}
-                    className={`${buildInStep === 2 ? 'grow' : ''} w-full transition-all duration-300 bg-black/80 px-[10px] py-[16px] rounded-[16px] flex items-start`}
+                    className={`${buildInStep === 2 ? 'grow' : ''} w-full transition-all duration-300 bg-black px-[10px] py-[16px] rounded-[16px] flex items-start`}
                   >
                     <div className="flex items-center gap-[16px]">
                       <svg className="w-[31px]" xmlns="http://www.w3.org/2000/svg" fill="#000" stroke="#000" aria-hidden="true" viewBox="0 0 64 64"><path fill="#fff" d="M61.501 55.155 26.109 19.77l1.613-1.614a2.245 2.245 0 0 0 .597-2.096C37.728 8.44 47.494 4.102 54.763 4.074 47.283-.331 34.92 2.448 23.59 10.84l-.647-.647a2.257 2.257 0 0 0-3.188 0l-1.613 1.612-3.489-3.487c-.35-.348-.791-.499-1.279-.499-2.761 0-7.043 4.855-5.064 6.815l3.501 3.5-1.618 1.618a2.262 2.262 0 0 0 0 3.186l.649.648C2.448 34.911-.332 47.271 4.074 54.747c.031-7.266 4.369-17.03 11.989-26.435a2.252 2.252 0 0 0 2.095-.596l1.619-1.617 35.404 35.396c.348.352.788.505 1.276.505 2.743 0 7.005-4.869 5.044-6.845"/></svg>
@@ -259,7 +260,7 @@ const LandingPage = () => {
 
                   <button
                     onClick={() => setBuildInStep(3)}
-                    className={`${buildInStep === 3 ? 'grow' : ''} w-full transition-all duration-300 bg-black/80 p-[16px] rounded-[16px] flex items-start`}
+                    className={`${buildInStep === 3 ? 'grow' : ''} w-full transition-all duration-300 bg-black p-[16px] rounded-[16px] flex items-start`}
                   >
                     <div className="flex items-center gap-[12px]">
                       <svg className="w-[33px]" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" viewBox="0 0 24 24"><path fill="#fff" d="M21 8V7h-2V2H5v5H3v1H2v10h1v1h3v3h12v-3h3v-1h1V8h-1zm-1 8h-1v1h-1v-5H6v5H5v-1H4v-6h1V9h14v1h1v6zm-4 4H8v-6h8v6zM7 4h10v3H7V4z"/></svg>
@@ -275,7 +276,7 @@ const LandingPage = () => {
                   {
                     buildInStep === 1 &&
                     <div className="w-full aspect-video">
-                      <h3 className="text-primary/80 mb-[16px] text-[1.85rem] font-google-sans-flex font-medium">First Step</h3>
+                      <h3 className="text-primary/80 mb-[16px] text-[1.85rem] font-google-sans-flex font-medium">Clean, modern, ready-made designs</h3>
                       <video
                         src="https://playntestimages.s3.eu-central-1.amazonaws.com/Videos/Adil+Videos+23.11/Domain+Demo.mp4"
                         autoPlay
@@ -290,7 +291,7 @@ const LandingPage = () => {
                   {
                     buildInStep === 2 &&
                     <div className="w-full aspect-video">
-                      <h3 className="text-primary/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Second Step</h3>
+                      <h3 className="text-primary/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Edit texts, links, projects...</h3>
                       <video
                         src="https://playntestimages.s3.eu-central-1.amazonaws.com/Videos/Adil+Videos+23.11/Time+Demo.mp4"
                         autoPlay
@@ -305,7 +306,7 @@ const LandingPage = () => {
                   {
                     buildInStep === 3 &&
                     <div className="w-full aspect-video">
-                      <h3 className="text-primary/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Third Step</h3>
+                      <h3 className="text-primary/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Go live instantly</h3>
                       <video
                         src="https://playntestimages.s3.eu-central-1.amazonaws.com/Videos/Adil+Videos+23.11/Accuracy+Demo.mp4"
                         autoPlay
@@ -379,12 +380,106 @@ const LandingPage = () => {
           </div>
         </section>
 
+        {/* Templates review */}
+        <section className="w-full py-[40px] bg-white">
+          <div className="container px-[16px] mx-auto w-full">
+            <div className="bg-[#f5f5f5]/90 w-full p-[16px] sm:p-[24px] rounded-[32px] sm:rounded-[60px]">
+              <h2 className="text-primary font-outfit text-center font-medium text-[2rem] mb-[24px]">Templates Preview</h2>
+                
+              <div className="flex mb-[56px] flex-wrap items-stretch gap-y-[32px] gap-x-[32px] xl:gap-[75px] justify-center">
+                <TemplateCard />
+                <TemplateCard />
+                <TemplateCard />
+              </div>
+
+              <div className="flex items-center justify-evenly flex-wrap gap-[24px] mb-[16px]">
+                <div className="w-fit flex flex-col items-center">
+                  <div className="flex items-center gap-[2px]">
+                    <CountUp
+                      from={0}
+                      to={15}
+                      direction="up"
+                      duration={2}
+                      startWhen
+                      className="text-[2.5rem] sm:text-[3rem] font-semibold tracking-tight font-poppins"
+                    />
+                    <p className="text-[2.5rem] sm:text-[3rem] font-semibold tracking-tight font-poppins">+</p>
+                  </div>
+
+                  <p className="text-[1.5rem] font-outfit font-medium leading-[100%] mt-[-2px]">Free Templates</p>
+                </div>
+                
+                <div className="w-fit flex flex-col items-center">
+                  <div className="flex items-center gap-[2px]">
+                    <CountUp
+                      from={0}
+                      to={25}
+                      direction="up"
+                      duration={2}
+                      startWhen
+                      className="text-[2.5rem] sm:text-[3rem] font-semibold tracking-tight font-poppins"
+                    />
+                    <p className="text-[2.5rem] sm:text-[3rem] font-semibold tracking-tight font-poppins">+</p>
+                  </div>
+
+                  <p className="text-[1.5rem] font-outfit font-medium leading-[100%] mt-[-2px]">Pro Templates</p>
+                </div>
+
+                <div className="w-fit flex flex-col items-center">
+                  <div className="flex items-center gap-[2px]">
+                    <CountUp
+                      from={0}
+                      to={5}
+                      direction="up"
+                      duration={2}
+                      startWhen
+                      className="text-[2.5rem] sm:text-[3rem] font-semibold tracking-tight font-poppins"
+                    />
+                    <p className="text-[2.5rem] sm:text-[3rem] font-semibold tracking-tight font-poppins">+</p>
+                  </div>
+
+                  <p className="text-[1.5rem] font-outfit font-medium leading-[100%] mt-[-2px]">VIP Templates</p>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-center">
+                <SeeAllButton />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Faq */}
+        <div>
+
+        </div>
+
       </div>
     </>
   )
 }
 
 export default LandingPage
+
+export const SeeAllButton = ({title = 'See All', link = '/templates'}: {title?: string, link?: string}) => {
+  return (
+    <Link
+      to={link}
+      className="flex items-center gap-[10px] pl-[18px] py-[6px] pr-[6px] bg-[#131313] w-fit rounded-[99px] group see-allbutton-wrapper"
+    >
+      <p className="text-[1.125rem] font-outfit text-white leading-[100%]">
+        {title}
+      </p>
+
+      <div
+        className="w-[30px] h-[30px] flex items-center justify-center transition-colors duration-150 justify-center bg-[#3c7be9] group-hover:bg-white transition-colors duration-300 rounded-full"
+      >
+        <svg className="group-hover:rotate-[360deg] transition-transform duration-300 text-white group-hover:text-[#131313] w-[22px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+      </div>
+    </Link>
+  )
+}
+
 
 export const LearnMoreButton = ({title, link, className} : {title: string, link: string, className?: string}) => {
   return (
