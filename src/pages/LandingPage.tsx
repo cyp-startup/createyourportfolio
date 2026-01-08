@@ -10,6 +10,8 @@ import portfoliophoto from '../assets/portfolios/cyp.png'
 import logo from '../assets/logo.svg'
 import CountUp from "@/components/CountUp"
 import TemplateCard from "@/components/TemplateCard"
+import { Faq1 } from "@/components/FAQ"
+import Squares from "@/components/Squares"
 
 const LandingPage = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -450,9 +452,20 @@ const LandingPage = () => {
         </section>
 
         {/* Faq */}
-        <div>
-
-        </div>
+        <section className="w-full relative">
+          <div className="absolute w-full h-full">
+            <Squares
+              speed={0.5} 
+              squareSize={40}
+              direction='diagonal' // up, down, left, right, diagonal
+              borderColor='#7d7d7d'
+              hoverFillColor='#222'
+            />
+          </div>
+          <div className="container mx-auto px-[16px] py-[65px] relative z-[10]">
+            <Faq1 />
+          </div>
+        </section>
 
       </div>
     </>
