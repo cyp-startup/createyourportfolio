@@ -219,7 +219,7 @@ const LandingPage = () => {
 
         <section 
           ref={ref}
-          className={`w-full lg:min-h-[220vh] bg-white relative z-[55] py-[40px] transition-[border-radius] duration-500 ease-out
+          className={`overflow-x-visible w-full lg:min-h-[220vh] bg-white relative z-[55] py-[40px] transition-[border-radius] duration-500 ease-out
           ${flat ? "rounded-t-none" : "rounded-t-[50px] lg:rounded-t-[200px]"}`}
         >
           <div className="sticky mx-auto lg:block hidden w-[898px] h-[65px] top-[23px] bg-black rounded-[40px] mb-[360px]"></div>
