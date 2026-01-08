@@ -1,10 +1,17 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import Noise from "./Noise"
 import AOSInit from "@/config/AOS"
 import { useState } from "react"
 
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false)
+
+  const {pathname} = useLocation()
+  const showNavbar = pathname !== '/signup' && pathname !== '/signin'
+
+  if (!showNavbar) {
+    return null;
+  }
 
   return (
     <>
@@ -21,9 +28,9 @@ const Navbar = () => {
         
         <Link
           to={'/'}
-          className="flex items-center gap-[8px]"
+          className="flex items-center gap-[8px] group"
         >
-          <svg className="w-[23px] sm:w-[27px] shrink-0 hover:rotate-[-720deg] transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 59" fill="none"><path fill="#060d0d" d="M54.642 39.509a30 30 0 0 1-12.894 15.185c-5.902 3.445-21.124-53.64-19.563 3.761A30 30 0 0 1 4.58 49.133c-4.636-5.022-6.956-17.348 17.605-18.848-24.56 1.5-24.084-13.038-20.178-18.646A30 30 0 0 1 18.174 0c8.95 52.285 13.576-1.553 19.893 1.054a30 30 0 0 1 14.848 13.281l-26.29 14.45L54.641 39.51Z"/></svg>
+          <svg className="w-[23px] sm:w-[27px] shrink-0 group-hover:rotate-[-360deg] transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 59" fill="none"><path fill="#060d0d" d="M54.642 39.509a30 30 0 0 1-12.894 15.185c-5.902 3.445-21.124-53.64-19.563 3.761A30 30 0 0 1 4.58 49.133c-4.636-5.022-6.956-17.348 17.605-18.848-24.56 1.5-24.084-13.038-20.178-18.646A30 30 0 0 1 18.174 0c8.95 52.285 13.576-1.553 19.893 1.054a30 30 0 0 1 14.848 13.281l-26.29 14.45L54.641 39.51Z"/></svg>
         
           <span className="leading-[100%] font-extrabold tracking-[1px] font-google-sans-flex text-[1.25rem] sm:text-[1.375rem] mt-[2px] text-[#060d0d]">CYP</span>
         </Link>
@@ -119,7 +126,7 @@ export const SignUpButton = ({title, link, className}: {title: string, link:stri
   return (
     <Link
       to={link}
-      className={`px-[14px] py-[6px] bg-white rounded-[40px] text-[0.938rem] ${className}`}
+      className={`px-[14px] py-[6px] bg-white rounded-[40px] text-[0.938rem] relative ${className}`}
     >
       {title}
     </Link>

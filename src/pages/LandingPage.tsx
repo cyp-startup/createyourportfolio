@@ -144,7 +144,7 @@ const LandingPage = () => {
                 <span className={showSecondLine ? "opacity-100" : "opacity-0"}>
                   {showSecondLine ? (
                     <SplitText
-                      text="Not in hours."
+                      text="Not in days."
                       className="text-[#818cf8] z-[10] hero-text"
                       delay={50}
                       duration={0.6}
@@ -155,7 +155,7 @@ const LandingPage = () => {
                   ) : (
                     /* Keeps the line height so the layout doesn't jump */
                     <SplitText
-                      text="Not in hours."
+                      text="Not in days."
                       className="text-[#818cf8] z-[10] opacity-0"
                     />
                   )}

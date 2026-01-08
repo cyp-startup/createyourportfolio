@@ -1,9 +1,16 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.svg'
 
 const Footer = () => {
+  const {pathname} = useLocation()
+  const showFooter = pathname !== '/signup' && pathname !== '/signin'
+
+  if (!showFooter) {
+    return null;
+  }
+
   return (
-    <footer className="w-full py-[20px] border-t border-white/20 bg-primary px-[20px]">
+    <footer className="w-full py-[20px] border-t border-white/20 bg-[#030010] px-[20px]">
       <div className="max-w-[1120px] mx-auto flex items-center justify-between">
         <Link
           to={'/'}
