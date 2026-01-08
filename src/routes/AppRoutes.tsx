@@ -4,6 +4,7 @@ import NotFound from "../pages/NotFound"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import SignUpPage from "@/pages/SignUpPage"
+import SignInPage from "@/pages/SignInPage"
 
 
 const AppRoutes = () => {
@@ -15,6 +16,7 @@ const AppRoutes = () => {
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/signup" element={<SignUpPage />} />
+                    <Route path="/signin" element={<SignInPage />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>

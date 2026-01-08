@@ -3,7 +3,7 @@ import logo from '../assets/logo.svg'
 import Noise from '@/components/Noise'
 import { Link } from 'react-router-dom'
 
-const SignUpPage = () => {
+const SignInPage = () => {
   return (
     <div className="text-white w-full min-h-[100vh] flex items-center justify-center relative">
         <Link to={'/'} className='fixed top-3 left-3 sm:top-10 sm:left-10 bg-white/15 backdrop-blur-3xl border-white/10 rounded-full w-[50px] h-[50px] p-[10px] z-[40] overflow-hidden'>
@@ -39,7 +39,7 @@ const SignUpPage = () => {
                         patternAlpha={15}
                     />
                 </div>
-                <h1 className='text-[2rem] sm:text-[2.25rem] text-white/90 font-poppins tracking-tight leading-[115%] font-semibold mb-[3px] sm:mb-[6px]'>Create An Account</h1>
+                <h1 className='text-[2rem] sm:text-[2.25rem] text-white/90 font-poppins tracking-tight leading-[115%] font-semibold mb-[3px] sm:mb-[6px]'>Sign In To Your Account</h1>
                 <p className='font-outfit text-white/80 font-medium text-[1rem] mb-[16px]'>Your portfolio shouldn’t take weeks</p>
                 
                 <div className='space-y-[5px] mb-[24px]'>
@@ -75,9 +75,6 @@ const SignUpPage = () => {
                 </div>
 
                 <form className='mb-[24px]'>
-                    <label className='text-white/80 font-outfit text-[0.938rem] font-medium mb-[6px] leading-[100%] block' htmlFor="username">Username</label>
-                    <input id='username' name='username' className='text-[1rem] border border-white/20 rounded-[12px] px-[12px] pb-[11px] pt-[9px] mb-[16px] placeholder:text-white/70 leading-[100%] w-full' placeholder='Your Username' type="text" />
-                    
                     <label className='text-white/80 font-outfit text-[0.938rem] font-medium mb-[6px] leading-[100%] block' htmlFor="email">Email</label>
                     <input id='email' name='email' className='text-[1rem] border border-white/20 rounded-[12px] px-[12px] pb-[11px] pt-[9px] mb-[16px] placeholder:text-white/70 leading-[100%] w-full' placeholder='cyp.project.email@gmail.com' type="email" />
 
@@ -88,10 +85,10 @@ const SignUpPage = () => {
                 <button
                     className='w-full px-[20px] py-[10px] border border-white/20 bg-white rounded-[12px] mb-[12px]'
                 >
-                    <p className='text-primary font-outfit text-[1.125rem] font-medium'>Create Account</p>
+                    <p className='text-primary font-outfit text-[1.125rem] font-medium'>Sign In</p>
                 </button>
 
-                <p className='text-[white]/90 text-[0.875rem] font-poppins mb-[4px]'>Already have an account? <Link className='underline' to={'/signin'}>Sign In</Link></p>
+                <p className='text-[white]/90 text-[0.875rem] font-poppins mb-[4px]'>Don't have an account? <Link className='underline' to={'/signup'}>Sign Up</Link></p>
                 <p className='text-[white]/70 text-[0.813rem] font-poppins text-right'>By continuing, you agree to our <Link className='underline' to={'/'}>Terms</Link> and <Link className='underline' to={'/'}>Privacy Policy.</Link></p>
             </div>
         </div>
@@ -99,4 +96,4 @@ const SignUpPage = () => {
   )
 }
 
-export default SignUpPage
+export default SignInPage
