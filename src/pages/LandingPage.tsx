@@ -229,44 +229,44 @@ const LandingPage = () => {
           <div className="sticky mx-auto lg:block hidden w-[898px] h-[65px] top-[23px] bg-black rounded-[40px] mb-[360px]"></div>
           {/* Build in 3 steps */}
           <div
-            className="max-w-[1150px] text-black mx-auto px-[16px] sticky top-[130px] lg:block hidden"
+            className="max-w-[1214px] text-white mx-auto px-[16px] sticky top-[130px] lg:block hidden"
           >
             <div 
               ref={stickyTriggerRef}
-              data-aos="fade-up" className="flex items-stretch gap-[16px]"
+              data-aos="fade-up" className="flex items-stretch gap-[16px] bg-[radial-gradient(circle_at_center,_#7ea6ec_0%,_#3d7eed_80%)] p-[32px] rounded-[32px]"
             >
               {/* left side */}
               <div className="shrink-0 w-[420px] flex flex-col">
-                <h2 className="text-black/80 font-google-sans-flex font-semibold text-[2.5rem] mb-[24px]">How it works.</h2>
+                <h2 className="text-white/80 font-google-sans-flex font-semibold text-[2.5rem] mb-[24px]">How it works.</h2>
                 
                 <div className="grow flex flex-col gap-[16px]">
                   <button
                     onClick={() => setBuildInStep(1)}
-                    className={`${buildInStep === 1 ? 'grow' : ''} w-full transition-all duration-300 bg-black p-[16px] rounded-[16px] flex items-start`}
+                    className={`${buildInStep === 1 ? 'grow' : ''} w-full transition-all duration-300 bg-[#fff] border border-black/30 py-[12px] px-[16px] rounded-[35px] flex items-start`}
                   >
-                    <div className="flex items-center gap-[12px]">
-                      <svg className="w-[36px]" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" id="Icons" fill="#fff" version="1.1" viewBox="0 0 32 32"><g id="SVGRepo_iconCarrier"><style>.st1,.st2,.st3.st2,.st3.st3</style><path d="M29 22v4h-4"/><path d="M19 26h-9"/><path d="M7 26H3v-4"/><path d="M3 18v-6"/><path d="M3 10V6h4"/><path d="M13 6h9"/><path d="M25 6h4v4"/><path d="M29 14v6"/></g></svg>
-                      <p className="text-white/90 font-outfit leading-[110%] font-semibold text-[1.8rem]">Pick a template</p>
+                    <div className="flex items-center gap-[6px]">
+                      <svg className="w-[28px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="#000" stroke-miterlimit="10" d="M9 2.594v25.562l1.656-1.375 4.031-3.375 2.032 4.032.437.906.907-.469 3.093-1.594.875-.437-.437-.907-1.844-3.625 5.063-.625 2.03-.25L25.407 19 10.72 4.281zm2 4.844 11.563 11.53-4.5.532-1.407.188.657 1.28 2.062 4-1.313.688-2.156-4.312-.594-1.125-.968.812L11 23.844z" font-family="none" font-size="none" font-weight="none" style={{mixBlendMode : 'normal'}} text-anchor="none" transform="scale(8)"/></svg>
+                      <p className="text-black font-outfit leading-[110%] font-medium text-[1.375rem]">Pick a template</p>
                     </div>
                   </button>
 
                   <button
                     onClick={() => setBuildInStep(2)}
-                    className={`${buildInStep === 2 ? 'grow' : ''} w-full transition-all duration-300 bg-black px-[10px] py-[16px] rounded-[16px] flex items-start`}
+                    className={`${buildInStep === 2 ? 'grow' : ''} w-full transition-all duration-300 bg-[#fff] border border-black/30 py-[12px] px-[16px] rounded-[35px] flex items-start`}
                   >
-                    <div className="flex items-center gap-[16px]">
-                      <svg className="w-[31px]" xmlns="http://www.w3.org/2000/svg" fill="#000" stroke="#000" aria-hidden="true" viewBox="0 0 64 64"><path fill="#fff" d="M61.501 55.155 26.109 19.77l1.613-1.614a2.245 2.245 0 0 0 .597-2.096C37.728 8.44 47.494 4.102 54.763 4.074 47.283-.331 34.92 2.448 23.59 10.84l-.647-.647a2.257 2.257 0 0 0-3.188 0l-1.613 1.612-3.489-3.487c-.35-.348-.791-.499-1.279-.499-2.761 0-7.043 4.855-5.064 6.815l3.501 3.5-1.618 1.618a2.262 2.262 0 0 0 0 3.186l.649.648C2.448 34.911-.332 47.271 4.074 54.747c.031-7.266 4.369-17.03 11.989-26.435a2.252 2.252 0 0 0 2.095-.596l1.619-1.617 35.404 35.396c.348.352.788.505 1.276.505 2.743 0 7.005-4.869 5.044-6.845"/></svg>
-                      <p className="text-white/90 font-outfit leading-[110%] font-semibold text-[1.8rem] whitespace-nowrap">Customize Your Content</p>
+                    <div className="flex items-center gap-[8px]">
+                      <svg className="w-[26px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="#000" stroke-miterlimit="10" d="m38.657 18.536 2.44-2.44a6.509 6.509 0 0 0 0-9.193 6.457 6.457 0 0 0-4.597-1.9 6.456 6.456 0 0 0-4.597 1.901l-2.439 2.439zm-11.314-7.072L9.274 29.533a3.51 3.51 0 0 0-.848 1.375l-3.35 10.121a1.498 1.498 0 0 0 1.896 1.895l10.118-3.351c.517-.17.993-.463 1.378-.849l18.068-18.068z" font-family="none" font-size="none" font-weight="none" style={{mixBlendMode : 'normal'}} text-anchor="none" transform="scale(5.33333)"/></svg>
+                      <p className="text-black font-outfit leading-[110%] font-medium text-[1.375rem] whitespace-nowrap">Customize Your Content</p>
                     </div>
                   </button>
 
                   <button
                     onClick={() => setBuildInStep(3)}
-                    className={`${buildInStep === 3 ? 'grow' : ''} w-full transition-all duration-300 bg-black p-[16px] rounded-[16px] flex items-start`}
+                    className={`${buildInStep === 3 ? 'grow' : ''} w-full transition-all duration-300 bg-[#fff] border border-black/30 py-[12px] px-[16px] rounded-[35px] flex items-start`}
                   >
-                    <div className="flex items-center gap-[12px]">
-                      <svg className="w-[33px]" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" viewBox="0 0 24 24"><path fill="#fff" d="M21 8V7h-2V2H5v5H3v1H2v10h1v1h3v3h12v-3h3v-1h1V8h-1zm-1 8h-1v1h-1v-5H6v5H5v-1H4v-6h1V9h14v1h1v6zm-4 4H8v-6h8v6zM7 4h10v3H7V4z"/></svg>
-                      <p className="text-white/90 font-outfit leading-[110%] font-semibold text-[1.8rem]">Publish Instantly</p>
+                    <div className="flex items-center gap-[8px]">
+                      <svg className='w-[27px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 16.5a1 1 0 0 1-.53.88l-7.9 4.44a1 1 0 0 1-1.14 0l-7.9-4.44A1 1 0 0 1 3 16.5v-9a1 1 0 0 1 .53-.88l7.9-4.44a1 1 0 0 1 1.14 0l7.9 4.44a1 1 0 0 1 .53.88v9M12 4.15 5 8.09v7.82l7 3.94 7-3.94V8.09l-7-3.94m0 2.08 4.9 2.83-4.9 2.83-4.9-2.83L12 6.23m5 8.66-4 2.31v-3.58l4-2.31v3.58m-6 2.31-4-2.31v-3.58l4 2.31Z"/></svg>
+                      <p className="text-black font-outfit leading-[110%] font-medium text-[1.375rem]">Publish Instantly</p>
                     </div>
                   </button>
                 </div>
@@ -278,14 +278,14 @@ const LandingPage = () => {
                   {
                     buildInStep === 1 &&
                     <div className="w-full aspect-video">
-                      <h3 className="text-primary/80 mb-[16px] text-[1.85rem] font-google-sans-flex font-medium">Clean, modern, ready-made designs</h3>
+                      <h3 className="text-white/80 mb-[16px] text-[1.85rem] font-google-sans-flex font-medium">Clean, modern, ready-made designs</h3>
                       <video
                         src="https://playntestimages.s3.eu-central-1.amazonaws.com/Videos/Adil+Videos+23.11/Domain+Demo.mp4"
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className="w-full h-full object-cover rounded-[16px] border border-primary/80"
+                        className="w-full h-full object-cover rounded-[16px] border border-black/20"
                       ></video>
                     </div>
                   }
@@ -293,14 +293,14 @@ const LandingPage = () => {
                   {
                     buildInStep === 2 &&
                     <div className="w-full aspect-video">
-                      <h3 className="text-primary/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Edit texts, links, projects...</h3>
+                      <h3 className="text-white/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Edit texts, links, projects...</h3>
                       <video
                         src="https://playntestimages.s3.eu-central-1.amazonaws.com/Videos/Adil+Videos+23.11/Time+Demo.mp4"
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className="w-full h-full object-cover rounded-[16px] border border-primary/80"
+                        className="w-full h-full object-cover rounded-[16px] border border-black/20"
                       ></video>
                     </div>
                   }
@@ -308,14 +308,14 @@ const LandingPage = () => {
                   {
                     buildInStep === 3 &&
                     <div className="w-full aspect-video">
-                      <h3 className="text-primary/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Go live instantly</h3>
+                      <h3 className="text-white/80 mb-[16px] text-[1.85rem] font-poppins font-medium">Go live instantly</h3>
                       <video
                         src="https://playntestimages.s3.eu-central-1.amazonaws.com/Videos/Adil+Videos+23.11/Accuracy+Demo.mp4"
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className="w-full h-full object-cover rounded-[16px] border border-primary/80"
+                        className="w-full h-full object-cover rounded-[16px] border border-black/20"
                       ></video>
                     </div>
                   }

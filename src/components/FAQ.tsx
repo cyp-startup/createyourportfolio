@@ -80,16 +80,16 @@ const Faq1 = ({
         <h1 className="mb-4 font-poppins text-3xl font-semibold md:mb-11 md:text-4xl text-white">
           {heading}
         </h1>
-        <div className="px-[32px] py-[24px] bg-white rounded-[40px]">
+        <div className="px-[32px] py-[16px] bg-white rounded-[40px]">
             <Accordion type="single" collapsible>
             {items.map((item, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="sm:text-[1.125rem] font-semibold hover:no-underline text-primary font-google-sans-flex">
-                    {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="sm:text-[0.938rem] font-montserrat text-primary/90 font-medium">
-                    {item.answer}
-                </AccordionContent>
+                <AccordionItem key={index} value={`item-${index}`} className="last:!border-none">
+                    <AccordionTrigger className="sm:text-[1.125rem] font-semibold hover:no-underline text-primary font-google-sans-flex">
+                        {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="sm:text-[0.938rem] font-montserrat text-primary/90 font-medium">
+                        {item.answer}
+                    </AccordionContent>
                 </AccordionItem>
             ))}
             </Accordion>
