@@ -26,7 +26,7 @@ const SignUpPage = () => {
                 hoverFillColor='#222'
             />
         </div>
-        <div className="container mx-auto relative z-[10]">
+        <div className="container !px-0 mx-auto relative z-[10]">
             <div className="scale-[0.9] max-w-[500px] mx-auto rounded-[24px] p-[24px] border border-[#fff]/20 bg-[#000]">
                 <div className='w-fit p-[12px] sm:p-[16px] mb-[12px] rounded-[12px] bg-white/10 backdrop-blur-xl border border-white/10 relative overflow-hidden'>
                     <img className="w-[40px] sm:w-[50px]" src={logo} alt="" />

@@ -87,7 +87,7 @@ const Faq1 = ({
                     <AccordionTrigger className="sm:text-[1.125rem] font-semibold hover:no-underline text-primary font-google-sans-flex">
                         {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="sm:text-[0.938rem] font-montserrat text-primary/90 font-medium">
+                    <AccordionContent className="sm:text-[0.938rem] font-poppins text-primary/90 font-medium">
                         {item.answer}
                     </AccordionContent>
                 </AccordionItem>

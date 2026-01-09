@@ -6,6 +6,7 @@ interface NoiseProps {
   patternScaleY?: number;
   patternRefreshInterval?: number;
   patternAlpha?: number;
+  className?: string;
 }
 
 const Noise: React.FC<NoiseProps> = ({
@@ -13,7 +14,8 @@ const Noise: React.FC<NoiseProps> = ({
   patternScaleX = 1,
   patternScaleY = 1,
   patternRefreshInterval = 2,
-  patternAlpha = 15
+  patternAlpha = 15,
+  className
 }) => {
   const grainRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -73,7 +75,7 @@ const Noise: React.FC<NoiseProps> = ({
 
   return (
     <canvas
-      className="pointer-events-none absolute top-0 left-0 h-screen w-screen"
+      className={`pointer-events-none absolute top-0 left-0 h-screen w-screen ${className}`}
       ref={grainRef}
       style={{
         imageRendering: 'pixelated'

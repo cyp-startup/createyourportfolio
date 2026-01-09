@@ -10,7 +10,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="w-full py-[20px] border-t border-white/20 bg-[#030010] px-[20px]">
+    <footer className="w-full py-[20px] border-t border-white/20 bg-[#030010] px-[20px] relative">
       <div className="max-w-[1120px] mx-auto flex items-center justify-between">
         <Link
           to={'/'}

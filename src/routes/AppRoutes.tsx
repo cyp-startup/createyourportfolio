@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import SignUpPage from "@/pages/SignUpPage"
 import SignInPage from "@/pages/SignInPage"
+import TemplatesPage from "@/pages/TemplatesPage"
 
 
 const AppRoutes = () => {
@@ -17,6 +18,7 @@ const AppRoutes = () => {
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/signup" element={<SignUpPage />} />
                     <Route path="/signin" element={<SignInPage />} />
+                    <Route path="/templates" element={<TemplatesPage />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
