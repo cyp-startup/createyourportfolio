@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 import Noise from "./Noise"
 import AOSInit from "@/config/AOS"
 import { useState } from "react"
-import ProfileDropdown from "./ProfileDropdown"
+// import ProfileDropdown from "./ProfileDropdown"
 
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false)
@@ -65,7 +65,7 @@ const Navbar = () => {
 
           <SignUpButton title="Get Started" link="/signup" />
 
-          <ProfileDropdown />
+          {/* <ProfileDropdown /> */}
         </div>
       </nav>
 
