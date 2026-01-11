@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 import Noise from "./Noise"
 import AOSInit from "@/config/AOS"
 import { useState } from "react"
+import ProfileDropdown from "./ProfileDropdown"
 
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false)
@@ -63,6 +64,8 @@ const Navbar = () => {
           </Link>
 
           <SignUpButton title="Get Started" link="/signup" />
+
+          {/* <ProfileDropdown /> */}
         </div>
       </nav>
 
@@ -92,6 +95,7 @@ const Navbar = () => {
 
           <Link
             to={'/'}
+            onClick={() => setOpenSidebar(false)}
             className="text-[1.25rem] font-semibold"
           > 
             Home
@@ -99,6 +103,7 @@ const Navbar = () => {
 
           <Link
             to={'/templates'}
+            onClick={() => setOpenSidebar(false)}
             className="text-[1.25rem] font-semibold"
           > 
             Templates
@@ -107,6 +112,7 @@ const Navbar = () => {
           <div className="grow">
             <Link
               to={'/tutor'}
+              onClick={() => setOpenSidebar(false)}
               className="text-[1.25rem] font-semibold"
             > 
               Tutor

@@ -6,6 +6,7 @@ import Footer from "../components/Footer"
 import SignUpPage from "@/pages/SignUpPage"
 import SignInPage from "@/pages/SignInPage"
 import TemplatesPage from "@/pages/TemplatesPage"
+import ProfilePage from "@/pages/ProfilePage"
 
 
 const AppRoutes = () => {
@@ -19,6 +20,7 @@ const AppRoutes = () => {
                     <Route path="/signup" element={<SignUpPage />} />
                     <Route path="/signin" element={<SignInPage />} />
                     <Route path="/templates" element={<TemplatesPage />} />
+                    <Route path="/profile" element={<ProfilePage />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
