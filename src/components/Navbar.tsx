@@ -65,7 +65,7 @@ const Navbar = () => {
 
           <SignUpButton title="Get Started" link="/signup" />
 
-          {/* <ProfileDropdown /> */}
+          <ProfileDropdown />
         </div>
       </nav>
 

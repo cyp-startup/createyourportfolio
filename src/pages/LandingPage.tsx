@@ -12,9 +12,11 @@ import CountUp from "@/components/CountUp"
 import TemplateCard from "@/components/TemplateCard"
 import { Faq1 } from "@/components/FAQ"
 import Squares from "@/components/Squares"
+import BlurText from "@/components/BlurText"
 
 const LandingPage = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
+  const [showLastLine, setShowLastLine] = useState(false);
   const ref = useRef<HTMLElement | null>(null)
   const [flat, setFlat] = useState(false)
   const [buildInStep, setBuildInStep] = useState(1)
@@ -80,7 +82,7 @@ const LandingPage = () => {
                 <span className={showSecondLine ? "opacity-100" : "opacity-0"}>
                   {showSecondLine ? (
                     <SplitText
-                      text="Not in days."
+                      text="Not in weeks."
                       className="text-[#818cf8] z-[10] hero-text"
                       delay={50}
                       duration={0.6}
@@ -91,7 +93,7 @@ const LandingPage = () => {
                   ) : (
                     /* Keeps the line height so the layout doesn't jump */
                     <SplitText
-                      text="Not in days."
+                      text="Not in weeks."
                       className="text-[#818cf8] z-[10] opacity-0"
                     />
                   )}
@@ -401,6 +403,29 @@ const LandingPage = () => {
           </div>
           <div className="container mx-auto py-[65px] relative z-[10]">
             <Faq1 />
+          </div>
+        </section>
+
+        {/* Portfolio */}
+        <section className="w-full relative bg-[radial-gradient(circle_at_center,_#7ea6ec_0%,_#3d7eed_80%)]">
+          <div className="max-w-[1100px] mx-auto px-[24px] py-[100px]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight text-center font-poppins mb-[24px]">
+              <BlurText
+                text="Your portfolio shouldn’t take weeks"
+                className="z-5  hero-text justify-center"
+                delay={200}
+                stepDuration={0.35}
+                animateBy="words"
+                direction="bottom"
+                threshold={0.1}
+                rootMargin="0px"
+                onAnimationComplete={() => setShowLastLine(true)}
+              />
+            </h1>
+
+            <div data-aos='zoom-in' data-aos-delay='100' className="flex items-center justify-center">
+              <SeeAllButton title="Start building for free" />
+            </div>
           </div>
         </section>
 
