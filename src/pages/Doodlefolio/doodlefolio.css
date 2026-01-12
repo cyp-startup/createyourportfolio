@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+.doodlefolio-wrapper {
+    font-family: "Space Grotesk", serif;
+    animation: welcome-animation 1s ease-in-out;
+    scroll-behavior: smooth;
+    color: black;
+}
+
+.doodlefolio-wrapper .container {
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.doodlefolio-wrapper .main-content {
+    flex-grow: 1;
+}
+
+.doodlefolio-wrapper .navbar {
+    filter: drop-shadow(6px 6px 0px #00000040);
+}
+
+.doodlefolio-wrapper .hero-main-photo {
+    animation: fade-up 1s ease-in-out
+}
+
+.doodlefolio-wrapper .card-shadow {
+    filter: drop-shadow(-9.42px 10.47px 0px #00000063);
+
+}
+
+@keyframes welcome-animation {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    } 100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* Add a custom CSS class for additional overlap */
+.doodlefolio-wrapper .overlap {
+    margin-top: -20px;
+    margin-left: -10px;
+}
+
+.doodlefolio-wrapper .lg-drop-shadow {
+    filter: drop-shadow(21px 21px 0px #00000040);
+}

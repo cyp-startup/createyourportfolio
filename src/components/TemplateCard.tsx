@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import portfolio from '../assets/portfolios/cyp.png'
+import portfolio from '../assets/portfolios/doodlefolio.png'
 import GradientText from './GradientText'
 
 interface TemplateCardProps {
@@ -26,8 +26,8 @@ const TemplateCard = ({title, price, description, view, created, className} : Te
   }
 
   return (
-    <Link to={'/templates/reacbitfolio'} className={`w-[350px] flex flex-col ${className}`}>
-      <div className="w-full aspect-square relative rounded-[12px] overflow-hidden mb-[14px]">
+    <Link to={'/templates/doodlefolio'} className={`w-[350px] flex flex-col ${className}`}>
+      <div className="w-full aspect-square relative rounded-[12px] overflow-hidden mb-[14px] border border-black/70">
         <img className='w-full h-full object-cover object-center' src={portfolio} alt="" />
 
         <div className='absolute top-[16px] z-[15] right-[16px] px-[6px] rounded-[12px] bg-white/10 backdrop-blur-xl border border-white/10'>

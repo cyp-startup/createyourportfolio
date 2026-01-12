@@ -2,11 +2,15 @@ import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.svg'
 
 const Footer = () => {
-  const {pathname} = useLocation()
-  const showFooter = pathname !== '/signup' && pathname !== '/signin'
+  const { pathname } = useLocation()
 
-  if (!showFooter) {
-    return null;
+  const hideFooter =
+    pathname === '/signin' ||
+    pathname === '/signup' ||
+    /^\/templates\/.+/.test(pathname) // /templates/anything
+  
+  if (hideFooter) {
+    return <div className='w-full bg-black h-[1px]'></div>
   }
 
   return (
