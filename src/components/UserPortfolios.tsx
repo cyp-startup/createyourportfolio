@@ -85,9 +85,6 @@ const UserPortfolios = () => {
 
   return (
     <div className="p-[18px] flex items-center justify-center gap-[16px] flex-wrap">
-      <TemplateCard created={200} view={2300} title="Brutalsit portfolio" description="lorem ipsum dolor sit amet hamed qayerda san ukajon kallenga sani" price={0} className='max-w-md' />
-      <TemplateCard created={2000} view={28674} title="Brutalsit portfolio" description="lorem ipsum dolor sit amet hamed qayerda san ukajon kallenga sani" price={42.1} className='max-w-md' />
-      <TemplateCard created={20000} view={2897641} title="Brutalsit portfolio" description="lorem ipsum dolor sit amet hamed qayerda san ukajon kallenga sani" price={16.99} className='max-w-md' />
     </div>
   )
 }
