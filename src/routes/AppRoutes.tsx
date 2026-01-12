@@ -8,6 +8,7 @@ import SignInPage from "@/pages/SignInPage"
 import TemplatesPage from "@/pages/TemplatesPage"
 import ProfilePage from "@/pages/ProfilePage"
 import DoodlefolioPage from "@/pages/Doodlefolio/DoodlefolioPage"
+import VantaPage from "@/pages/Vanta/VantaPage"
 
 
 const AppRoutes = () => {
@@ -22,6 +23,7 @@ const AppRoutes = () => {
                     <Route path="/signin" element={<SignInPage />} />
                     <Route path="/templates" element={<TemplatesPage />} />
                     <Route path="/templates/doodlefolio" element={<DoodlefolioPage />} />
+                    <Route path="/templates/vanta" element={<VantaPage />} />
                     <Route path="/profile" element={<ProfilePage />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>

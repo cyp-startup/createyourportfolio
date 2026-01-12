@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom'
-import portfolio from '../assets/portfolios/doodlefolio.png'
 import GradientText from './GradientText'
 
 interface TemplateCardProps {
   title: string;
   price: number;
   description: string;
-  view: number;
+  views: number;
   created: number;
+  img: string;
+  link: string;
+  type: string;
   className?: string;
 }
 
-const TemplateCard = ({title, price, description, view, created, className} : TemplateCardProps) => {
+const TemplateCard = ({title, price, description, views, created, img, link, type, className} : TemplateCardProps) => {
+
   const formatViews = (num: number) => {
     if (num >= 1_000_000_000) {
       return (num / 1_000_000_000).toFixed(1).replace(/\.0$/, '') + 'b'
@@ -26,9 +29,9 @@ const TemplateCard = ({title, price, description, view, created, className} : Te
   }
 
   return (
-    <Link to={'/templates/doodlefolio'} className={`w-[350px] flex flex-col ${className}`}>
+    <Link to={link} className={`w-[350px] flex flex-col ${className}`}>
       <div className="w-full aspect-square relative rounded-[12px] overflow-hidden mb-[14px] border border-black/70">
-        <img className='w-full h-full object-cover object-center' src={portfolio} alt="" />
+        <img className='w-full h-full object-cover object-center' src={img} alt="" />
 
         <div className='absolute top-[16px] z-[15] right-[16px] px-[6px] rounded-[12px] bg-white/10 backdrop-blur-xl border border-white/10'>
           <GradientText
@@ -45,7 +48,7 @@ const TemplateCard = ({title, price, description, view, created, className} : Te
       </div>
 
       {/* description */}
-      <div className='px-[12px] mb-[16px]'>
+      <div className='px-[12px] mb-[16px] grow'>
         <p className='font-poppins text-[0.938rem] font-medium text-black/60'>{description}</p>
       </div>
 
@@ -55,14 +58,17 @@ const TemplateCard = ({title, price, description, view, created, className} : Te
 
           <p className='text-[1.125rem] font-outfit font-medium leading-[100%]'>{title}</p>
 
-          <span className='text-[#fff] px-[9px] py-[5px] leading-[100%] tracking-tight text-[0.688rem] font-poppins uppercase font-medium bg-primary rounded-[16px]'>PRO</span>
+          {
+            type !== 'free' &&
+            <span className='text-[#fff] px-[9px] py-[5px] leading-[100%] tracking-tight text-[0.688rem] font-poppins uppercase font-medium bg-primary rounded-[16px]'>{type}</span>
+          }
         </div>
 
         <div className='flex items-center gap-[6px]'>
           {/* view */}
           <div className='flex items-center gap-[3px]'>
             <svg className='w-[20px]' xmlns="http://www.w3.org/2000/svg" viewBox="-3.5 0 32 32"><path d="M12.406 13.844c1.188 0 2.156.969 2.156 2.156s-.969 2.125-2.156 2.125-2.125-.938-2.125-2.125.938-2.156 2.125-2.156zm0-5.313c7.063 0 12.156 6.625 12.156 6.625.344.438.344 1.219 0 1.656 0 0-5.094 6.625-12.156 6.625S.25 16.812.25 16.812c-.344-.438-.344-1.219 0-1.656 0 0 5.094-6.625 12.156-6.625zm0 12.813c2.938 0 5.344-2.406 5.344-5.344s-2.406-5.344-5.344-5.344S7.062 13.062 7.062 16s2.406 5.344 5.344 5.344z"/></svg>
-            <p className='font-outfit text-primary font-medium text-[0.875rem]'>{formatViews(view)}</p>
+            <p className='font-outfit text-primary font-medium text-[0.875rem]'>{formatViews(views)}</p>
           </div>
 
           <div className='flex items-center gap-[3px]'>

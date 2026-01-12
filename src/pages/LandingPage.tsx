@@ -13,6 +13,7 @@ import TemplateCard from "@/components/TemplateCard"
 import { Faq1 } from "@/components/FAQ"
 import Squares from "@/components/Squares"
 import BlurText from "@/components/BlurText"
+import { portfolios } from "@/portfolios/portfolios"
 
 const LandingPage = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -328,9 +329,11 @@ const LandingPage = () => {
               <h2 className="text-primary font-outfit text-center font-medium text-[2rem] mb-[24px]">Templates Preview</h2>
                 
               <div className="flex mb-[32px] flex-wrap items-stretch gap-y-[32px] gap-x-[32px] xl:gap-[75px] justify-center">
-                <TemplateCard title="Reactbitfolio" price={16.9} description="A clean and modern portfolio focused on clarity, performance, and strong visual hierarchy. Perfect for showcasing work without distractions." view={209374} created={27402} />
-                <TemplateCard title="Reactbitfolio" price={16.9} description="A bold, visually driven portfolio designed to stand out. Smooth layouts and expressive sections highlight creativity and personality." view={209374} created={27402} />
-                <TemplateCard title="Reactbitfolio" price={16.9} description="A developer-centric portfolio built for speed and scalability. Structured sections present projects, skills, and experience in a clear, technical way." view={209374} created={27402} />
+                {
+                  portfolios.map(portfolio => (
+                    <TemplateCard key={portfolio.title} type={portfolio.type} title={portfolio.title} price={portfolio.price} description={portfolio.description} views={portfolio.views} created={portfolio.created} link={portfolio.link} img={portfolio.img} />
+                  ))
+                }
               </div>
 
               <div className="flex items-center justify-evenly flex-wrap gap-[24px] mb-[16px]">

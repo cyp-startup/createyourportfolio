@@ -1,13 +1,12 @@
-import CustomSelect from "@/components/CustomSelect"
 import TemplateCard from "@/components/TemplateCard"
-import { templates } from "@/config/templates"
+import { portfolios } from "@/portfolios/portfolios"
 import { useState } from "react"
 
 const TemplatesPage = () => {
   const [templateType, setTemplateType] = useState('all')
   const [search, setSearch] = useState('')
 
-  const filteredTemplates = templates.filter(template => {
+  const filteredTemplates = portfolios.filter(template => {
     const matchesType =
       templateType === 'all' || template.type === templateType
   
@@ -107,13 +106,16 @@ const TemplatesPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[24px] lg:gap-[32px]">
                       {groupedTemplates.free.map(template => (
                         <TemplateCard
-                          className="w-full"
-                          key={template.id}
+                          className="!w-full"
+                          type={template.type}
+                          key={template.title}
                           title={template.title}
                           price={template.price}
                           description={template.description}
-                          view={template.view}
+                          views={template.views}
                           created={template.created}
+                          img={template.img}
+                          link={template.link}
                         />
                       ))}
                     </div>
@@ -129,13 +131,16 @@ const TemplatesPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[24px] lg:gap-[32px]">
                       {groupedTemplates.pro.map(template => (
                         <TemplateCard
-                          className="w-full"
-                          key={template.id}
+                          className="!w-full"
+                          type={template.type}
+                          key={template.title}
                           title={template.title}
                           price={template.price}
                           description={template.description}
-                          view={template.view}
+                          views={template.views}
                           created={template.created}
+                          img={template.img}
+                          link={template.link}
                         />
                       ))}
                     </div>
@@ -151,13 +156,16 @@ const TemplatesPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[24px] lg:gap-[32px]">
                       {groupedTemplates.vip.map(template => (
                         <TemplateCard
-                          className="w-full"
-                          key={template.id}
+                          className="!w-full"
+                          type={template.type}
+                          key={template.title}
                           title={template.title}
                           price={template.price}
                           description={template.description}
-                          view={template.view}
+                          views={template.views}
                           created={template.created}
+                          img={template.img}
+                          link={template.link}
                         />
                       ))}
                     </div>
@@ -168,13 +176,16 @@ const TemplatesPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[24px] lg:gap-[32px]">
                 {filteredTemplates.map(template => (
                   <TemplateCard
-                    className="w-full"
-                    key={template.id}
+                    className="!w-full"
+                    type={template.type}
+                    key={template.title}
                     title={template.title}
                     price={template.price}
                     description={template.description}
-                    view={template.view}
+                    views={template.views}
                     created={template.created}
+                    img={template.img}
+                    link={template.link}
                   />
                 ))}
               </div>
