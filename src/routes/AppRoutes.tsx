@@ -9,6 +9,7 @@ import TemplatesPage from "@/pages/TemplatesPage"
 import ProfilePage from "@/pages/ProfilePage"
 import DoodlefolioPage from "@/pages/Doodlefolio/DoodlefolioPage"
 import VantaPage from "@/pages/Vanta/VantaPage"
+import MusePage from "@/pages/Muse/MusePage"
 
 
 const AppRoutes = () => {
@@ -24,6 +25,7 @@ const AppRoutes = () => {
                     <Route path="/templates" element={<TemplatesPage />} />
                     <Route path="/templates/doodlefolio" element={<DoodlefolioPage />} />
                     <Route path="/templates/vanta" element={<VantaPage />} />
+                    <Route path="/templates/muse" element={<MusePage />} />
                     <Route path="/profile" element={<ProfilePage />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>

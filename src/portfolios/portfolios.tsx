@@ -1,18 +1,9 @@
 import doodlefolio from '../assets/portfolios/doodlefolio.png'
 import vanta from '../assets/portfolios/vanta.jpg'
 import cyp from '../assets/portfolios/cyp.png'
+import muse from '@/assets/portfolios/muse.png'
 
 export const portfolios = [
-    {
-        title: 'Doodlefolio',
-        img: doodlefolio,
-        description: 'A clean and playful portfolio template with a hand-drawn style, built to help creatives get started fast.',
-        views: 1500,
-        created: 100,
-        price: 6.49,
-        type: 'pro',
-        link: '/templates/doodlefolio',
-    },
     {
         title: 'Vanta',
         img: vanta,
@@ -32,5 +23,25 @@ export const portfolios = [
         price: 0,
         type: 'free',
         link: '/templates/vanta',
+    },
+    {
+        title: 'Doodlefolio',
+        img: doodlefolio,
+        description: 'A clean and playful portfolio template with a hand-drawn style, built to help creatives get started fast.',
+        views: 1500,
+        created: 100,
+        price: 6.49,
+        type: 'pro',
+        link: '/templates/doodlefolio',
+    },
+    {
+        title: 'Muse',
+        img: muse,
+        description: 'A clean and playful portfolio template with a hand-drawn style, built to help creatives get started fast.',
+        views: 3500,
+        created: 600,
+        price: 14.99,
+        type: 'pro',
+        link: '/templates/muse',
     },
 ]

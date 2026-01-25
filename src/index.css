@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
 @import "tailwindcss";
 
@@ -19,6 +20,19 @@
   --font-outfit: "Outfit", sans-serif;
   --font-roboto-flex: "Roboto Flex", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
+  --font-bricolage-grotesque: "Bricolage Grotesque", sans-serif;
+
+  /* Global Breakpoints */
+  --breakpoint-xs: 425px;
+
+  /* MUSE SPECIFIC COLORS 
+      We use unique keys so they don't clash with Shadcn variables 
+  */
+  --color-musePrimary: #FE4300;
+  --color-museSecondary: #868686;
+  --color-museSoftGray: #F0F0F0;
+  --color-museMistGray: #D7DCDD;
+  --color-museGray: #C0D8E0;
 }
 
 :root {
