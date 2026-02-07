@@ -10,6 +10,9 @@ import ProfilePage from "@/pages/ProfilePage"
 import DoodlefolioPage from "@/pages/Doodlefolio/DoodlefolioPage"
 import VantaPage from "@/pages/Vanta/VantaPage"
 import MusePage from "@/pages/Muse/MusePage"
+import Galleyfish from "@/pages/Galleyfish/Galleyfish"
+import PictoPage from "@/pages/Picto/PictoPage"
+import ReactbitfolioPage from "@/pages/Reactbitfolio/ReactbitfolioPage"
 
 
 const AppRoutes = () => {
@@ -25,7 +28,10 @@ const AppRoutes = () => {
                     <Route path="/templates" element={<TemplatesPage />} />
                     <Route path="/templates/doodlefolio" element={<DoodlefolioPage />} />
                     <Route path="/templates/vanta" element={<VantaPage />} />
+                    <Route path="/templates/picto" element={<PictoPage />} />
                     <Route path="/templates/muse" element={<MusePage />} />
+                    <Route path="/templates/galleyfish" element={<Galleyfish />} />
+                    <Route path="/templates/reactbitfolio" element={<ReactbitfolioPage />} />
                     <Route path="/profile" element={<ProfilePage />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>

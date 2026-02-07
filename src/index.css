@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "tailwindcss";
 
@@ -21,7 +22,16 @@
   --font-roboto-flex: "Roboto Flex", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-bricolage-grotesque: "Bricolage Grotesque", sans-serif;
+  --font-work-sans: "Work Sans", sans-serif;
 
+  --breakpoint-picto-xxs: 21.25rem; /* COMMENT: 340px */
+  --breakpoint-picto-xs: 23.125rem; /* COMMENT: 363px */
+  --breakpoint-picto-xxl: 82.5rem; /* COMMENT: 1320px */
+  --color-picto-primary: #9929fb;
+  --color-picto-primary-dark: #650fa0;
+  --color-picto-soft-white: #f0f1f3;
+  --color-picto-soft-dark: #87909d;
+  
   /* Global Breakpoints */
   --breakpoint-xs: 425px;
 

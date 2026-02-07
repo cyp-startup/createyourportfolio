@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake;
+}
+
+@theme {
+  --breakpoint-picto-xxs: 21.25rem; /* COMMENT: 340px */
+  --breakpoint-picto-xs: 23.125rem; /* COMMENT: 363px */
+  --breakpoint-picto-xxl: 82.5rem; /* COMMENT: 1320px */
+  --color-picto-primary: #9929fb;
+  --color-picto-primary-dark: #650fa0;
+  --color-picto-soft-white: #f0f1f3;
+  --color-picto-soft-dark: #87909d;
+}
+
+.picto * {
+  transition-property: all;
+  transition-timing-function: var(
+    --tw-ease,
+    var(--default-transition-timing-function)
+  );
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 200ms;
+  transition-duration: 200ms;
+}
+
+.picto .btn-primary {
+  background-color: var(--color-picto-primary);
+  @apply border-0 text-white hover:scale-[102%] transition-all duration-500;
+}
+
+.picto .btn-primary:hover {
+  background-color: var(--color-picto-primary-dark);
+}
+/* body {
+  font-family: "Work Sans", sans-serif;
+} */
+
+.picto .content {
+  @apply max-picto-xxl:w-full picto-xxl:max-w-[1320px] picto-xxl:mx-auto;
+}
+
+.picto .section-title {
+  @apply md:font-semibold text-3xl sm:text-4xl md:text-5xl font-medium;
+}
+
+.picto .center {
+  @apply flex justify-center items-center;
+}
+
+.picto .introduction-profile-background {
+  background: radial-gradient(
+      circle at 12% 100%,
+      #ffe2b0f5 1% 5px,
+      transparent 15%
+    ),
+    /* bottom left */
+      radial-gradient(circle at 95% -15%, #da4df166 5%, transparent 30%),
+    /* top right */
+      radial-gradient(circle at center right, #c4f5e9b2 2%, transparent 35%); /* center right */
+}
+
+.picto .blog-background {
+  background: radial-gradient(circle at -10% 0%, #da4df166 1%, transparent 25%),
+    radial-gradient(circle at 110% 30%, #c4f5e9b2 5%, transparent 25%);
+}
+
+.picto .bg-highlight {
+  background: linear-gradient(to top, #ffc8c8 40%, transparent 40%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.picto #testimonialSwiper .swiper-pagination {
+  position: relative;
+  margin-top: 50px;
+}
