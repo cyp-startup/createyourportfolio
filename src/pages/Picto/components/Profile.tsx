@@ -53,10 +53,10 @@ const Profile = () => {
               My Projects
             </a>
             <a
-              className={`btn picto-xxs:btn-lg px-6 max-xs:px-2 picto-xxs:py-3 hover:border-picto-primary bg-white duration-300 transition-all hover:text-picto-primary  ms-4 text-xs picto-xxs:text-[14px] sm:text-[16px]`}
+              className={`btn picto-xxs:btn-lg px-6 max-xs:px-2 picto-xxs:py-3 hover:border-picto-primary bg-white duration-300 transition-all hover:text-picto-primary ms-4 text-xs picto-xxs:text-[14px] sm:text-[16px]`}
               href="#!"
             >
-              {/* <FontAwesomeIcon icon={faDownload} /> Download CV */}
+              Download CV
             </a>
           </div>
         </div>
